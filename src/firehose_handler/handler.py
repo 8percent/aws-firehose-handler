@@ -15,15 +15,12 @@ class FirehoseHandler(Handler):
         self.firehose = session.client(service_name='firehose')
         self.delivery_stream_name = delivery_stream_name
         self.record = None
-        print('init')
 
     def emit(self, record):
         try:
             msg = self.format(record)
-            print(f'1: {self.record}')
             self.record = msg.encode(encoding='UTF-8')
             self.flush()
-            print(f'2: {self.record}')
         except Exception:
             self.handleError(record)
 
