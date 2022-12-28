@@ -1,7 +1,3 @@
-from logging import StreamHandler
+from .handler import FirehoseHandler  # noqa:F401
 
 __version__ = '0.0.1'
-
-
-class FirehoseHandler(StreamHandler):
-    pass
