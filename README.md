@@ -10,6 +10,8 @@ Python logging handler to load data into AWS Kinesis Delivery Stream
 
 ### Demo Script
 ```
+import logging.config
+
 CONFIG = {
     'version': 1,
     'root': {
@@ -17,6 +19,9 @@ CONFIG = {
         'handlers': ['console'],
     },
     'formatters': {
+        'verbose': {
+            'format': '%(asctime)s %(name)s %(levelname)s %(message)s %(pathname)s %(lineno)d %(funcName)s %(process)d %(processName)s %(thread)d %(threadName)s'
+        },
         'json': {
             'class': 'pythonjsonlogger.jsonlogger.JsonFormatter',
             'format': '%(asctime)s %(name)s %(levelname)s %(message)s %(pathname)s %(lineno)d %(funcName)s %(process)d %(processName)s %(thread)d %(threadName)s'
@@ -55,6 +60,7 @@ def test():
         raise NameError("fake NameError")
     except NameError as e:
         logger.error(e, exc_info=True)
+
 
 if __name__ == '__main__':
     test()
