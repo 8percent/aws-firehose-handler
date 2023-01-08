@@ -1,11 +1,11 @@
 [tool.poetry]
 name = "aws-firehose-handler"
-version = "0.0.1"
-description = "Provide base template for python library"
+version = "1.0.0"
+description = "Python logging handler for AWS Firehose"
 authors = ["JaeyoungHeo <jay.jaeyoung@gmail.com>"]
 maintainers = ["JaeyoungHeo <jay.jaeyoung@gmail.com>"]
 readme = "README.md"
-repository = "https://github.com/8percent/python-library"
+repository = "https://github.com/8percent/aws-firehose-handler"
 license = "MIT"
 packages = [
     { include = "firehose_handler", from = "src" },
