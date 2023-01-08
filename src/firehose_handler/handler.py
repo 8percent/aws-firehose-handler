@@ -7,14 +7,14 @@ class FirehoseHandler(Handler):
     def __init__(self, profile_name, region_name, delivery_stream_name):
         super().__init__()
 
+        self.record = None
+
         session = boto3.Session(
             profile_name=profile_name,
             region_name=region_name,
         )
-
         self.firehose = session.client(service_name='firehose')
         self.delivery_stream_name = delivery_stream_name
-        self.record = None
 
     def emit(self, record):
         try:
