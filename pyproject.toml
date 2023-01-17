@@ -13,7 +13,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = ">=3.9 <3.11"
-boto3 = "^1.16.63"
+boto3 = ">=1.0.0 <2.0.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.2"
